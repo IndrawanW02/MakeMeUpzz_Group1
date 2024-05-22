@@ -65,7 +65,7 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UserEmail" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="UsedDOB" Type="date" Nullable="false" />
+          <Property Name="UserDOB" Type="date" Nullable="false" />
           <Property Name="UserGender" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="UserRole" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="UserPassword" Type="varchar" MaxLength="100" Nullable="false" />
@@ -268,7 +268,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UsedDOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UserDOB" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="UserGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserRole" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -359,7 +359,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MakeMeUpzzDatabseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MakeMeUpzzDatabseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Carts" EntityType="Self.Cart" />
           <EntitySet Name="MakeupBrands" EntityType="Self.MakeupBrand" />
           <EntitySet Name="Makeups" EntityType="Self.Makeup" />
@@ -401,7 +401,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MakeMeUpzzDatabseModelStoreContainer" CdmEntityContainer="MakeMeUpzzDatabseEntities">
+        <EntityContainerMapping StorageEntityContainer="MakeMeUpzzDatabseModelStoreContainer" CdmEntityContainer="MakeMeUpzzDatabseEntities1">
           <EntitySetMapping Name="Carts">
             <EntityTypeMapping TypeName="MakeMeUpzzDatabseModel.Cart">
               <MappingFragment StoreEntitySet="Carts">
@@ -466,7 +466,7 @@
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
-                <ScalarProperty Name="UsedDOB" ColumnName="UsedDOB" />
+                <ScalarProperty Name="UserDOB" ColumnName="UserDOB" />
                 <ScalarProperty Name="UserGender" ColumnName="UserGender" />
                 <ScalarProperty Name="UserRole" ColumnName="UserRole" />
                 <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />

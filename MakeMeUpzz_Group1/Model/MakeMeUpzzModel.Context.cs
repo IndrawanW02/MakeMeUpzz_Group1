@@ -13,10 +13,10 @@ namespace MakeMeUpzz_Group1.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MakeMeUpzzDatabseEntities : DbContext
+    public partial class MakeMeUpzzDatabseEntities1 : DbContext
     {
-        public MakeMeUpzzDatabseEntities()
-            : base("name=MakeMeUpzzDatabseEntities")
+        public MakeMeUpzzDatabseEntities1()
+            : base("name=MakeMeUpzzDatabseEntities1")
         {
         }
     

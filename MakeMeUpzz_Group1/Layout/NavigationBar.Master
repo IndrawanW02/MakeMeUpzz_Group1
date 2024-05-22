@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavigationBar.master.cs" Inherits="MakeMeUpzz_Group1.Master.NavigationBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav>
+                <asp:LinkButton ID="HomeNav" runat="server">Home</asp:LinkButton>
+                <asp:LinkButton ID="OrderMakeupNav" runat="server">Order Makeup</asp:LinkButton>
+                <asp:LinkButton ID="HistoryNav" runat="server">History</asp:LinkButton>
+                <asp:LinkButton ID="ManageMakeupNav" runat="server">Manage Makeup</asp:LinkButton>
+                <asp:LinkButton ID="OrderQueueNav" runat="server">Order Queue</asp:LinkButton>
+                <asp:LinkButton ID="ProfileNav" runat="server">Profile</asp:LinkButton>
+                <asp:LinkButton ID="TransactionReportNav" runat="server">Transaction Report</asp:LinkButton>
+                <asp:Button ID="LogoutBtn" runat="server" Text="Logout" OnClick="LogoutBtn_Click" />
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

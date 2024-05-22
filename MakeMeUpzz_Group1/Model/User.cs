@@ -24,7 +24,7 @@ namespace MakeMeUpzz_Group1.Model
         public int UserID { get; set; }
         public string Username { get; set; }
         public string UserEmail { get; set; }
-        public System.DateTime UsedDOB { get; set; }
+        public System.DateTime UserDOB { get; set; }
         public string UserGender { get; set; }
         public string UserRole { get; set; }
         public string UserPassword { get; set; }
