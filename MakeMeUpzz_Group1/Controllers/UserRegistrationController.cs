@@ -56,14 +56,6 @@ namespace MakeMeUpzz_Group1.Controllers
             return response;
         }
 
-        public static int GenerateUserID()
-        {
-            int id = UserRegistrationHandler.GetLastUserID();
-            if (id == 0) id = 1;
-            else id++;
-            return id;
-        }
-
         public static bool IsEligible(String Username, String UserEmail, String UserGender, String Password, String ConfirmationPassword, DateTime UserDOB)
         {
             if (CheckUsername(Username).Equals("") && CheckEmail(UserEmail).Equals("") && CheckGender(UserGender).Equals("") && CheckPassword(Password).Equals("") && CheckConfirmationPassword(Password, ConfirmationPassword).Equals("") && CheckDOB(UserDOB).Equals(""))
@@ -73,9 +65,9 @@ namespace MakeMeUpzz_Group1.Controllers
             return false;
         }
 
-        public static void Registrate(String Username, String UserEmail, String UserGender, String Password, String ConfirmationPassword, DateTime UserDOB)
+        public static void Registrate(String Username, String UserEmail, String UserGender, String Password, DateTime UserDOB)
         {
-            UserRegistrationHandler.RegistrateUser(GenerateUserID(), Username, UserEmail, UserDOB, UserGender, "Customer", Password);
+            UserRegistrationHandler.RegistrateUser(Username, UserEmail, UserDOB, UserGender, "Customer", Password);
         }
     }
 }

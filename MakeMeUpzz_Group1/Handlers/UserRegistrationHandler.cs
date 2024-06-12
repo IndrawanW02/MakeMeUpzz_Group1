@@ -20,10 +20,18 @@ namespace MakeMeUpzz_Group1.Handlers
             return userRepo.GetLastUserID();
         }
 
-        public static void RegistrateUser(int UserID, String UserName, String UserEmail, DateTime UserDOB, String UserGender, String UserRole, String UserPassword)
+        public static void RegistrateUser(String UserName, String UserEmail, DateTime UserDOB, String UserGender, String UserRole, String UserPassword)
         {
             UserRepository userRepo = new UserRepository();
-            userRepo.AddUser(UserID, UserName, UserEmail, UserDOB, UserGender, UserRole, UserPassword);
+            userRepo.AddUser(GenerateUserID(), UserName, UserEmail, UserDOB, UserGender, UserRole, UserPassword);
+        }
+
+        public static int GenerateUserID()
+        {
+            int id = UserRegistrationHandler.GetLastUserID();
+            if (id == 0) id = 1;
+            else id++;
+            return id;
         }
     }
 }

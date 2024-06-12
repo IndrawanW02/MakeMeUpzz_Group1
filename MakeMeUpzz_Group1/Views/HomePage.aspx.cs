@@ -22,7 +22,7 @@ namespace MakeMeUpzz_Group1.Views
                 User user;
                 if (Session["user"] == null)
                 {
-                    var id = Request.Cookies["user_cookie"].Values;
+                    var id = Request.Cookies["user_cookie"].Value;
                     user = UserController.GetUserByID(Convert.ToInt32(id));
                     Session["user"] = user;
                 }
@@ -33,7 +33,21 @@ namespace MakeMeUpzz_Group1.Views
 
                 RoleLbl.Text = user.UserRole;
                 UsernameLbl.Text = user.Username;
+
+                if (user.UserRole.Equals("Admin"))
+                {
+                    CustomerListLbl.Visible = true;
+                    CustomerList.Visible = true;
+                    BindCustomerList();
+                }
             }
+        }
+
+        private void BindCustomerList()
+        {
+            List<User> customerList = UserController.GetAllCustomerUser();
+            CustomerList.DataSource = customerList;
+            CustomerList.DataBind();
         }
     }
 }

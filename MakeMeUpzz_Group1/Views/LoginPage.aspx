@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <h1>LOGIN PAGE </h1>
 
             <div class="InputUsername">

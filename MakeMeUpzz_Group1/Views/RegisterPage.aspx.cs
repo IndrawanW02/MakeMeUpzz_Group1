@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -41,15 +42,15 @@ namespace MakeMeUpzz_Group1.Views
 
             if (UserRegistrationController.IsEligible(Username, UserEmail, UserGender, UserPassword, ConfirmationPassword, UserDOB))
             {
-                UserRegistrationController.Registrate(Username, UserEmail, UserGender, UserPassword, ConfirmationPassword, UserDOB);
-                ClientScript.RegisterStartupScript(this.GetType(), "SuccessAlert", "alert('Account created successfully');", true);
-                Response.Redirect("~/Views/LoginPage.aspx");
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "FailAlert", "alert('Unable to create account');", true);
+                UserRegistrationController.Registrate(Username, UserEmail, UserGender, UserPassword, UserDOB);
+                String script = "alert('Akun berhasil dibuat !'); window.location.href='" + ResolveUrl("~/Views/LoginPage.aspx") + "';";
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
             }
         }
 
+        protected void LoginNav_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/LoginPage.aspx");
+        }
     }
 }

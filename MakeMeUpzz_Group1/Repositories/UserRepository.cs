@@ -13,14 +13,36 @@ namespace MakeMeUpzz_Group1.Repositories
         
         public void AddUser(int UserID, String UserName, String UserEmail, DateTime UserDOB, String UserGender, String UserRole, String UserPassword)
         {
-            User user = UserFactory.Create(UserID, UserName, UserEmail, UserDOB, UserGender, UserRole, UserPassword);
-            db.Users.Add(user);
+            User newUser = UserFactory.Create(UserID, UserName, UserEmail, UserDOB, UserGender, UserRole, UserPassword);
+            db.Users.Add(newUser);
             db.SaveChanges();
-        } 
+        }
+
+        public void UpdateUserProfileByID(int UserID, String UserName, String UserEmail, DateTime UserDOB, String UserGender)
+        {
+            User UpdateUser = GetUserByID(UserID);
+            UpdateUser.Username = UserName;
+            UpdateUser.UserEmail = UserEmail;
+            UpdateUser.UserDOB = UserDOB;
+            UpdateUser.UserGender = UserGender;
+            db.SaveChanges();
+        }
+
+        public void UpdateUserPasswordById(int UserID, String NewPassword)
+        {
+            User UpdateUser = GetUserByID(UserID);
+            UpdateUser.UserPassword = NewPassword;
+            db.SaveChanges();
+        }
 
         public List<User> GetAllUser()
         {
             return (from u in db.Users select u).ToList();
+        }
+
+        public List<User> GetAllCustomerUser()
+        {
+            return db.Users.Where(user => user.UserRole.Equals("Customer")).ToList();
         }
 
         public User GetUserByID(int id)
@@ -46,6 +68,14 @@ namespace MakeMeUpzz_Group1.Repositories
             return (from u
                     in db.Users 
                     where u.Username.Equals(Username) 
+                    select u.UserPassword).FirstOrDefault();
+        }
+
+        public String GetUserPasswordById(int id)
+        {
+            return (from u 
+                    in db.Users 
+                    where u.UserID.Equals(id) 
                     select u.UserPassword).FirstOrDefault();
         }
 

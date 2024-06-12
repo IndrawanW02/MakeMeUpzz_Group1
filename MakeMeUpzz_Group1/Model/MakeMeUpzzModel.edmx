@@ -21,6 +21,7 @@
           <Property Name="MakeupBrandID" Type="int" Nullable="false" />
           <Property Name="MakeupBrandName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="MakeupBrandRating" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Makeups">
           <Key>
@@ -32,6 +33,7 @@
           <Property Name="MakeupWeight" Type="int" Nullable="false" />
           <Property Name="MakeupTypeID" Type="int" Nullable="false" />
           <Property Name="MakeupBrandID" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MakeupTypes">
           <Key>
@@ -39,6 +41,7 @@
           </Key>
           <Property Name="MakeupTypeID" Type="int" Nullable="false" />
           <Property Name="MakeupTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TransactionDetails">
           <Key>
@@ -214,6 +217,7 @@
           <Property Name="MakeupBrandID" Type="Int32" Nullable="false" />
           <Property Name="MakeupBrandName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MakeupBrandRating" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Makeups" Relationship="Self.FK_Makeups_MakeupBrands" FromRole="MakeupBrands" ToRole="Makeups" />
         </EntityType>
         <EntityType Name="Makeup">
@@ -226,6 +230,7 @@
           <Property Name="MakeupWeight" Type="Int32" Nullable="false" />
           <Property Name="MakeupTypeID" Type="Int32" Nullable="false" />
           <Property Name="MakeupBrandID" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_Carts_Makeups" FromRole="Makeups" ToRole="Carts" />
           <NavigationProperty Name="MakeupBrand" Relationship="Self.FK_Makeups_MakeupBrands" FromRole="Makeups" ToRole="MakeupBrands" />
           <NavigationProperty Name="MakeupType" Relationship="Self.FK_Makeups_MakeupTypes" FromRole="Makeups" ToRole="MakeupTypes" />
@@ -237,6 +242,7 @@
           </Key>
           <Property Name="MakeupTypeID" Type="Int32" Nullable="false" />
           <Property Name="MakeupTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Makeups" Relationship="Self.FK_Makeups_MakeupTypes" FromRole="MakeupTypes" ToRole="Makeups" />
         </EntityType>
         <EntityType Name="TransactionDetail">
@@ -418,6 +424,7 @@
                 <ScalarProperty Name="MakeupBrandID" ColumnName="MakeupBrandID" />
                 <ScalarProperty Name="MakeupBrandName" ColumnName="MakeupBrandName" />
                 <ScalarProperty Name="MakeupBrandRating" ColumnName="MakeupBrandRating" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -430,6 +437,7 @@
                 <ScalarProperty Name="MakeupWeight" ColumnName="MakeupWeight" />
                 <ScalarProperty Name="MakeupTypeID" ColumnName="MakeupTypeID" />
                 <ScalarProperty Name="MakeupBrandID" ColumnName="MakeupBrandID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -438,6 +446,7 @@
               <MappingFragment StoreEntitySet="MakeupTypes">
                 <ScalarProperty Name="MakeupTypeID" ColumnName="MakeupTypeID" />
                 <ScalarProperty Name="MakeupTypeName" ColumnName="MakeupTypeName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -195,6 +195,24 @@ namespace MakeMeUpzz_Group1.Views
         protected global::System.Web.UI.WebControls.Label DOBErrLbl;
 
         /// <summary>
+        /// haveAccLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label haveAccLbl;
+
+        /// <summary>
+        /// LoginNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LoginNav;
+
+        /// <summary>
         /// RegisterBtn control.
         /// </summary>
         /// <remarks>

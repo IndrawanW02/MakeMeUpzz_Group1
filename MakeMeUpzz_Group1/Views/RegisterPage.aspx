@@ -46,6 +46,10 @@
                 <asp:Label ID="DOBErrLbl" runat="server" Text="" ForeColor="Red"></asp:Label>
             </div>
             <div>
+                <asp:Label ID="haveAccLbl" runat="server" Text="Already Have an account?"></asp:Label>
+                <asp:LinkButton ID="LoginNav" runat="server" OnClick="LoginNav_Click">Login Now</asp:LinkButton>
+            </div>
+            <div>
                 <asp:Button ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" />
             </div>
 

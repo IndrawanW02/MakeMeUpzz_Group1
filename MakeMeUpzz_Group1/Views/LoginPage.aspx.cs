@@ -41,17 +41,14 @@ namespace MakeMeUpzz_Group1.Views
                     cookie.Expires = DateTime.Now.AddHours(1);
                     Response.Cookies.Add(cookie);
                 }
-                Response.Redirect("~/Views/HomePage.aspx");
+
+                String script = "alert('Login Berhasil!'); window.location.href='" + ResolveUrl("~/Views/HomePage.aspx") + "';";
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
             }
             else
             {
                 ErrorLbl.Text = Status;
             }
-
-            //if(ErrorLbl.Text.Equals("Login Success"))
-            //{
-
-            //}
         }
 
         protected void RegisterNav_Click(object sender, EventArgs e)

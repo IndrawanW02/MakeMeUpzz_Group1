@@ -22,6 +22,7 @@ namespace MakeMeUpzz_Group1.Model
     
         public int MakeupTypeID { get; set; }
         public string MakeupTypeName { get; set; }
+        public bool IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Makeup> Makeups { get; set; }

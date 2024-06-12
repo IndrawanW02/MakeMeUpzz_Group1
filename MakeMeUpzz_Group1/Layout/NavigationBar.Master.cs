@@ -2,6 +2,7 @@
 using MakeMeUpzz_Group1.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +25,7 @@ namespace MakeMeUpzz_Group1.Master
                 User user;
                 if (Session["user"] == null)
                 {
-                    var id = Request.Cookies["user_cookie"].Values;
+                    var id = Request.Cookies["user_cookie"].Value;
                     user = UserController.GetUserByID(Convert.ToInt32(id));
                     Session["user"] = user;
                 }
